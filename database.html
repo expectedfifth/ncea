@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <script src="https://kit.fontawesome.com/c5af3c2255.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+     body{text-align: center;}
+    
+     #enterDetails{background-color: #ece6e3;float: center; width: 50%; width: 400px; height: 550px; margin-left: 80px; border: 2px solid; box-shadow: 5px 20px 17px; float: left; ;}
+     #findDetails{background-color: #c1b1a6;float: center; width: 50%; width: 400px; height: 550px; margin-right: 80px; border: 2px solid; box-shadow: 5px 20px 17px; float: right; ;} 
+     input{ width: 120px;}
+     #enterFeedback {
+     display: block;
+     width: 50%;
+     height: 50px;
+     padding: 20px;
+     font-size: 14px;
+     line-height: 0.1;
+     
+   
+}
+    </style>
+
+
+</head>
+<body>
+    <nav>
+        <img src="NCEA logo.png" alt="">
+         <div class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="more info.html">More Information</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="#">Feedback</a></li>
+           
+        </ul>
+         </div>
+    </nav>
+    
+    <a href="https://www.nzqa.govt.nz/ncea/">Visit the official Ncea website for more information</a>
+
+
+    <!--Database-->
+    <section id="About-Database">
+</section>
+<br>
+<body>
+    <marquee><h3>Hi! We would like your feedback to improve our website. Was this website useful for you?</h3></marquee>
+ </body>
+ <br>
+ <br>
+<div id="enterDetails">
+    <h1>Enter your Details </h1>
+    <h4>Name</h4>
+    <input id="enterName" type="text">
+    <h4>ID</h4>
+    <input id="enterID" type="text">
+    <h4>Feedback</h4>
+    <input id="enterFeedback" type="text"> 
+    
+<br><br>      
+    <button id="insert">INSERT DATA</button>
+    <button id="update">UPDATE DATA</button>
+    <button id="remove">REMOVE DATA</button> <br><br>
+</div>
+<div id="findDetails">
+    <h1>Find your Details</h1>
+    <h4>ID</h4>
+    <input id="findID" type="text"> <br><br>
+    <button id="find">FIND DATA</button>
+    <h3 id="findName" type="text"></h3>
+    <h3 id="findFeedback" type="text"></h3> <b></b>
+    <h3 id="find" type="text"></h3> <b></b>
+
+</div>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBh1V-4AlgMEGA2sXpoOjq2Vfet02nF474",
+      authDomain: "ncea-database-3d519.firebaseapp.com",
+      databaseURL: "https://ncea-database-3d519-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "ncea-database-3d519",
+      storageBucket: "ncea-database-3d519.appspot.com",
+      messagingSenderId: "709928476348",
+      appId: "1:709928476348:web:1de92ea59d87c0c06f7ab9",
+      measurementId: "G-JWXP9KP86X"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    import {getDatabase, set, get, update, remove, ref, child}
+    from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+    const db = getDatabase();
+    var enterID = document.querySelector("#enterID");
+    var enterName = document.querySelector("#enterName");
+    var enterFeedback = document.querySelector("#enterFeedback");
+    var findID = document.querySelector("#findID");
+    var findName = document.querySelector("#findName");
+    var findFeedback = document.querySelector("#findFeedback");
+    var insertBtn = document.querySelector("#insert");
+    var updateBtn = document.querySelector("#update");
+    var removeBtn = document.querySelector("#remove");
+    var findBtn = document.querySelector("#find");
+    function InsertData() {
+     set(ref(db, "People/" + enterID.value), {
+        Name: enterName.value,
+        ID: enterID.value,
+        Feedback:enterFeedback.value
+    
+     })
+    .then(()=>{
+        alert("Data added sucessfully!")
+    })
+    .catch ((error)=>{
+        alert(error)
+    });
+    }
+    function FindData() {
+    const dbref = ref (db);
+    get(child(dbref, "People/" + findID.value))
+    .then((snapshot)=>{
+        if (snapshot.exists()) {
+        findName.innerHTML = "Name: " + snapshot.val().Name;
+        findFeedback.innerHTML = "Feedback: " + snapshot.val().Feedback;
+
+        } else {
+            alert("No data found");
+        }
+    })
+    .catch((error)=>{
+        alert(error)
+    })
+    }
+    
+    function UpdateData() {
+        update(ref(db, "People/" + enterID.value), {
+            Name: enterName.value,
+            Feedback: enterFeedback.value
+        })
+        .then(()=>{
+            alert("Data updated sucessfully!")
+        })
+        .catch(()=>{
+            alert(error);
+        });
+    }
+    function RemoveData() {
+        remove(ref(db, "People/" + enterID.value))
+        .then(()=>{
+            alert("Data removed sucessfully!")
+        })
+        .catch((error)=>{
+          alert(error); 
+        });
+    }
+    
+
+    insertBtn.addEventListener('click', InsertData);
+    updateBtn.addEventListener('click', UpdateData);
+    removeBtn.addEventListener('click', RemoveData);
+    findBtn.addEventListener('click', FindData);
+
+
+  </script>
+  
+ 
+</body>
+</html>
+
+
+
+
+
+
+

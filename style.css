@@ -1,0 +1,308 @@
+nav{
+    position: absolute;
+    width: 90%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 8vw;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav img{
+    width: 90px;
+    cursor: pointer;
+
+}
+
+nav .navigation ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 50px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color:rgb( 21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: 0.3s ease;
+}
+
+nav .navigation ul li a:active,
+nav .navigation ul li a:hover{
+    color:#FDC93B ;
+}
+
+#home{
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5,4,46,0.7)),url("NCEA\ image\ 2.jpeg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 40px;
+}
+
+#home h2{
+    color: #fff;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+
+}
+
+#home p{
+    width: 50%;
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 25px;
+}
+
+#home a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600;
+}
+
+#home a.blue{
+    color: #fff;
+    background:rgb(38, 0, 82);
+    transition: 0.3s ease;
+}
+
+#home a.blue:hover{
+    color:rgb( 21, 21, 100);
+    background: #fff;
+}
+
+#home a.yellow{
+    color: #fff;
+    background:#2075d1;
+    transition: 0.3s ease;
+}
+
+#home a.yellow:hover{
+    color:rgb( 21, 21, 100);
+    background: #fff;
+}
+
+
+#features{
+    padding: 5vw 8vw 0 8vw;
+    text-align: center;
+}
+
+#features .fea-base{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+
+#features .fea-box{
+    background: #F9F9FF;
+    text-align: start;
+}
+
+#features .fea-box i{
+    font-size: 2.3rem;
+    color: rgb(44, 44, 80);
+}
+
+#features .fea-box h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(46, 46, 59);
+    padding: 13px 0 7px 0;
+}
+
+#features .fea-box p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(70, 70, 87);
+}
+
+#About-home{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.938), rgba(5,4,46,0.7)),url("Studying.jpg");
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 40px;
+    color: #F9F9FF;
+}
+
+p{
+    font-family: 'Agdasima', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    size: 40%;
+ }
+
+
+
+#About-home p{
+    text-align: start;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 5.5rem;
+
+}
+
+.Studying-about{
+   width: 300px;
+   height: 200px;
+   margin-left: 20px;
+   border: 2px solid;
+   box-shadow: 5px 20px 17px;
+   float: right;
+}
+
+
+#About-Info{
+    background-image: linear-gradient(rgba(218, 218, 219, 0.3), rgba(5,4,46,0.7)),url("more\ info\ image.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 40px; 
+    color: #F9F9FF;
+}
+
+
+.What is NCEA-about{
+    width: 300px;
+    height: 200px;
+    margin-left: 20px;
+    border: 2px solid;
+    box-shadow: 5px 20px 17px;
+    float: left; 
+}
+
+p{
+    font-family: 'Agdasima', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    size: 45%;
+ }
+
+
+ #About-tips{
+    background-image: linear-gradient(rgba(231, 231, 231, 0.815), rgba(5,4,46,0.7)),url("Tips\ background.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 40px; 
+    color: white;
+ }
+
+ p{
+    font-family: 'Agdasima', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    size: 40%;
+ }
+ 
+ .Keep calm-tips{
+    float: right;
+    margin-right: 10px;
+  }
+
+ #myImage{
+  width: 30%;
+  height: 40%;
+ }
+
+
+
+
+
+ #About-Video{
+    background-image: linear-gradient(rgba(231, 231, 231, 0.815), rgba(5,4,46,0.7)),url("NCEA\ works.avif");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 40px; 
+    color: #F9F9FF;
+ }
+
+ #video {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  #About-Database{
+    background-image: linear-gradient(rgba(231, 231, 231, 0.815), rgba(5,4,46,0.7)),url("Feedbackimage.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 40px; 
+    color: #F9F9FF;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #ece6e3;
+  }
+  .aligned-text{
+    float: left;;
+  }
+
+  
+#enterFeedback {
+    display: block;
+    margin: auto;
+    border: 3px solid rgb(0, 0, 0);
+    width: 50%;
+    height: 50px;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 0.1;
+  
+}
+
+  
