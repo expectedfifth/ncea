@@ -266,10 +266,7 @@ p{
     color: #F9F9FF;
  }
 
- #video {
-    width: 100%;
-    max-width: 500px;
-  }
+
 
   #About-Database{
     background-image: linear-gradient(rgba(231, 231, 231, 0.815), rgba(5,4,46,0.7)),url("Feedbackimage.jpg");
